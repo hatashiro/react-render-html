@@ -1,2 +1,69 @@
-# react-render-html
+# react-render-html [![travis-ci](https://travis-ci.org/noraesae/react-render-html.svg)](https://travis-ci.org/noraesae/react-render-html)
+
 No more dangerouslySetInnerHTML, render HTML as React element.
+
+## How it works
+
+It renders a provided HTML string into a React element.
+
+```js
+import renderHTML from 'react-render-html';
+
+renderHTML("<a class='github' href='https://github.com'><b>GitHub</b></a>")
+// => React Element
+//    <a className="github" href="https://github.com"><b>GitHub</b></a>
+```
+
+It may be used in the `render` method in a React component:
+
+```js
+let App = React.createClass({
+  render() {
+    return (
+      <div className='app'>
+        {renderHTML(someHTML)}
+      </div>
+    );
+  }
+});
+```
+
+Or just by itself
+```js
+ReactDOM.render(renderHTML(someHTML), document.getElementById('app'));
+```
+
+If a provided HTML contains several top-level nodes, the function will return
+an array of React elements.
+
+```js
+renderHTML('<li>hello</li><li>world</li>');
+// => [React Element <li>hello</li>, React Element <li>world</li>]
+```
+
+## Install
+
+Install with NPM:
+
+```
+npm i --save react-render-html
+```
+
+Import with CommonJS or whatever:
+
+```js
+const renderHTML = require('react-render-html');
+
+import renderHTML from 'react-render-html';
+import * as renderHTML from 'react-render-html'; // both of them work
+```
+
+## A bug!
+
+When a bug is found, please report them in [Issues](https://github.com/noraesae/react-render-html/issues).
+
+Also, any form of contribution(especially a PR) will absolutely be welcomed :beers:
+
+## License
+
+[MIT](LICENSE)
