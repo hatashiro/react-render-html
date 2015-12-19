@@ -16,10 +16,10 @@ var renderNode = function (node, key) {
 
   if (node.childNodes.length === 0) {
     return React.createElement(node.tagName, attr);
-  } else {
-    var children = node.childNodes.map(renderNode);
-    return React.createElement(node.tagName, attr, children);
   }
+
+  var children = node.childNodes.map(renderNode);
+  return React.createElement(node.tagName, attr, children);
 };
 
 var renderHTML = function (html) {
