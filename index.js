@@ -14,8 +14,12 @@ var renderNode = function (node, key) {
     return result;
   }, {key: key});
 
-  var children = node.childNodes.map(renderNode);
-  return React.createElement(node.tagName, attr, children);
+  if (node.childNodes.length === 0) {
+    return React.createElement(node.tagName, attr);
+  } else {
+    var children = node.childNodes.map(renderNode);
+    return React.createElement(node.tagName, attr, children);
+  }
 };
 
 var renderHTML = function (html) {
