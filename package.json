@@ -1,6 +1,6 @@
 {
   "name": "react-render-html",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "No more dangerouslySetInnerHTML, render HTML as React element.",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,6 @@
   "dependencies": {
     "parse5": "^2.0.2",
     "react": "^0.14.3",
-    "react-attr-converter": "0.0.1"
+    "react-attr-converter": "0.1.0"
   }
 }
