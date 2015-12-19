@@ -12,7 +12,7 @@ var renderNode = function (node, key) {
   var attr = node.attrs.reduce(function (result, attr) {
     result[convertAttr(attr.name)] = attr.value;
     return result;
-  }, {key});
+  }, {key: key});
 
   var children = node.childNodes.map(renderNode);
   return React.createElement(node.tagName, attr, children);
