@@ -30,7 +30,9 @@
   },
   "dependencies": {
     "parse5": "^2.0.2",
-    "react": "^15.1.0",
     "react-attr-converter": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^15.1.0"
   }
 }
