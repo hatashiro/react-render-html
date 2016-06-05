@@ -52,10 +52,14 @@ npm i --save react-render-html
 Import with CommonJS or whatever:
 
 ```js
-const renderHTML = require('react-render-html');
+const {
+  default: renderHTML,
+  applyMiddleware
+} = require('react-render-html');
 
-import renderHTML from 'react-render-html';
-import * as renderHTML from 'react-render-html'; // both of them work
+// OR
+
+import renderHTML, { applyMiddleware } from 'react-render-html';
 ```
 
 ## A bug!
