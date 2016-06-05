@@ -1,40 +1,49 @@
-'use strict';
+import parse5 from 'parse5';
+import React from 'react';
+import convertAttr from 'react-attr-converter';
+import styler from 'react-styling';
 
-var htmlParser = require('parse5');
-var React = require('react');
-var convertAttr = require('react-attr-converter');
-var styler = require('react-styling');
+const compose = (...fns) => arg => fns.reduceRight((prev, fn) => fn(prev), arg);
 
-var renderNode = function (node, key) {
-  if (node.nodeName === '#text') {
-    return node.value;
-  }
+function baseRenderNode(renderNode) {
+  return (node, key) => {
+    if (node.nodeName === '#text') {
+      return node.value;
+    }
 
-  var attr = node.attrs.reduce(function (result, attr) {
-    var name = convertAttr(attr.name);
-    result[name] = name === 'style' ? styler.default(attr.value) : attr.value;
-    return result;
-  }, {key: key});
+    const props = {
+      key,
+      ...node.attrs.reduce((attrs, attr) => {
+        const name = convertAttr(attr.name);
+        return {
+          ...attrs,
+          [name]: name === 'style' ? styler(attr.value) : attr.value
+        };
+      }, {})
+    };
 
-  if (node.childNodes.length === 0) {
-    return React.createElement(node.tagName, attr);
-  }
+    const children = node.childNodes.map(renderNode);
+    return React.createElement(node.tagName, props, ...children);
+  };
+}
 
-  var children = node.childNodes.map(renderNode);
-  return React.createElement(node.tagName, attr, children);
-};
+export function applyMiddleware(...middlewares) {
+  return renderNode => (node, key) => {
+    const chain = middlewares.map(middleware => middleware(renderNode));
+    return compose(...chain)(node, key);
+  };
+}
 
-var renderHTML = function (html) {
-  var htmlAST = htmlParser.parseFragment(html);
+export default function renderHTML(html, middleware = () => next => (...args) => next(...args)) {
+  const htmlAST = parse5.parseFragment(html);
 
   if (htmlAST.childNodes.length === 0) {
     return null;
   }
 
-  var result = htmlAST.childNodes.map(renderNode);
+  const finalRenderNode =
+    (node, key) => middleware(finalRenderNode)(baseRenderNode(finalRenderNode))(node, key);
+  const result = htmlAST.childNodes.map(finalRenderNode);
 
   return result.length === 1 ? result[0] : result;
-};
-
-module.exports = renderHTML;
-module.exports.renderHTML = renderHTML;
+}
