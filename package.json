@@ -23,7 +23,7 @@
   "devDependencies": {
     "ava": "^0.8.0",
     "react-dom": "^0.14.3",
-    "xo": "^0.12.1"
+    "xo": "^0.15.1"
   },
   "xo": {
     "space": true

@@ -1,8 +1,8 @@
 'use strict';
 
 import test from 'ava';
-import renderHTML from '../index';
 import * as ReactDOMServer from 'react-dom/server';
+import renderHTML from '../index';
 
 let renderTest = (t, reactEl, expectedHTML) => {
   t.same(ReactDOMServer.renderToStaticMarkup(reactEl), expectedHTML);
