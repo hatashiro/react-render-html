@@ -3,6 +3,7 @@
 var htmlParser = require('parse5');
 var React = require('react');
 var convertAttr = require('react-attr-converter');
+var styler = require('react-styling');
 
 var renderNode = function (node, key) {
   if (node.nodeName === '#text') {
@@ -10,7 +11,8 @@ var renderNode = function (node, key) {
   }
 
   var attr = node.attrs.reduce(function (result, attr) {
-    result[convertAttr(attr.name)] = attr.value;
+    var name = convertAttr(attr.name);
+    result[name] = name === 'style' ? styler.default(attr.value) : attr.value;
     return result;
   }, {key: key});
 

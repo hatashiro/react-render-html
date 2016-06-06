@@ -26,3 +26,10 @@ test('returns an array of React elements if several nodes are provided', t => {
   renderTest(t, arr[0], '<li><a class="hello" href="https://github.com">hihi</a></li>');
   renderTest(t, arr[1], '<li><p><b>hello</b>world</p><p>react</p></li>');
 });
+
+test('parse the style attribute when specified as a string', t => {
+  singeElementTest(t, '<ul>' +
+                        '<li style="font-weight:bold;color:green;"><a class="hello" href="https://github.com">hihi</a></li>' +
+                        '<li style="font-style:italic;"><p><b>hello</b>world</p><p>react</p></li>' +
+                      '</ul>');
+});
