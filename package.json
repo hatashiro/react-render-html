@@ -22,6 +22,7 @@
   "homepage": "https://github.com/noraesae/react-render-html#readme",
   "devDependencies": {
     "ava": "^0.15.2",
+    "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "xo": "^0.15.1"
   },
