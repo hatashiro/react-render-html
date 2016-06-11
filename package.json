@@ -2,9 +2,13 @@
   "name": "react-render-html",
   "version": "0.1.4",
   "description": "No more dangerouslySetInnerHTML, render HTML as React element.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "xo && ava"
+    "build": "babel src --out-dir lib",
+    "build:watch": "babel src --watch --out-dir lib",
+    "lint": "xo src/**",
+    "prepublish": "npm run build",
+    "test": "npm run lint && ava"
   },
   "repository": {
     "type": "git",
@@ -22,11 +26,15 @@
   "homepage": "https://github.com/noraesae/react-render-html#readme",
   "devDependencies": {
     "ava": "^0.15.2",
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.5.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "xo": "^0.15.1"
   },
   "xo": {
+    "esnext": true,
     "space": true
   },
   "dependencies": {
