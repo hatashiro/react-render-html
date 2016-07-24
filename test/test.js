@@ -33,3 +33,7 @@ test('parse the style attribute when specified as a string', t => {
                         '<li style="font-style:italic;"><p><b>hello</b>world</p><p>react</p></li>' +
                       '</ul>');
 });
+
+test('parse comment as undefined', t => {
+  t.falsy(renderHTML('<!-- this is comment -->'));
+});
