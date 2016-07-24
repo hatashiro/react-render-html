@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "parse5": "^2.0.2",
-    "react-attr-converter": "0.1.0",
+    "react-attr-converter": "git+https://github.com/noraesae/react-attr-converter.git",
     "react-styling": "^1.5.0"
   },
   "peerDependencies": {

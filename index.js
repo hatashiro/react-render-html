@@ -10,6 +10,10 @@ var renderNode = function (node, key) {
     return node.value;
   }
 
+  if (node.nodeName === '#comment') {
+    return node.value;
+  }
+
   var attr = node.attrs.reduce(function (result, attr) {
     var name = convertAttr(attr.name);
     result[name] = name === 'style' ? styler.default(attr.value) : attr.value;
