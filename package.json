@@ -30,6 +30,7 @@
     "space": true
   },
   "dependencies": {
+    "camelcase": "^3.0.0",
     "parse5": "^2.0.2",
     "react-attr-converter": "0.1.1",
     "react-styling": "^1.5.0"
