@@ -32,7 +32,8 @@
   "dependencies": {
     "camelcase": "^3.0.0",
     "parse5": "^2.0.2",
-    "react-attr-converter": "0.1.1"
+    "react-attr-converter": "0.1.1",
+    "uppercamelcase": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^15.1.0"

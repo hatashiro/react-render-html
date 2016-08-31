@@ -27,3 +27,12 @@ test('multiple rules with semi colon', t => {
     maxWidth: '300px'
   });
 });
+
+test('vender prefix', t => {
+  t.deepEqual(styleParser('-webkit-transition: all; -moz-transition: all; -o-transition: all; -ms-transition: all'), {
+    WebkitTransition: 'all',
+    MozTransition: 'all',
+    OTransition: 'all',
+    msTransition: 'all'
+  });
+});
