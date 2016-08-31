@@ -55,7 +55,6 @@ Import with CommonJS or whatever:
 const renderHTML = require('react-render-html');
 
 import renderHTML from 'react-render-html';
-import * as renderHTML from 'react-render-html'; // both of them work
 ```
 
 ## A bug!

@@ -1,7 +1,5 @@
-'use strict';
-
 import test from 'ava';
-import * as ReactDOMServer from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import renderHTML from '../index';
 
 let renderTest = (t, reactEl, expectedHTML) => {

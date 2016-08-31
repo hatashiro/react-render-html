@@ -41,4 +41,3 @@ var renderHTML = function (html) {
 };
 
 module.exports = renderHTML;
-module.exports.renderHTML = renderHTML;
