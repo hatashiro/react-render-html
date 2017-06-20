@@ -1,11 +1,11 @@
 'use strict';
 
-var htmlParser = require('parse5');
-var React = require('react');
-var convertAttr = require('react-attr-converter');
-var styleParser = require('./lib/style-parser');
+const htmlParser = require('parse5');
+const React = require('react');
+const convertAttr = require('react-attr-converter');
+const styleParser = require('./lib/style-parser');
 
-var renderNode = function (node, key) {
+const renderNode = function (node, key) {
   if (node.nodeName === '#text') {
     return node.value;
   }
@@ -14,28 +14,28 @@ var renderNode = function (node, key) {
     return node.value;
   }
 
-  var attr = node.attrs.reduce(function (result, attr) {
-    var name = convertAttr(attr.name);
+  const attr = node.attrs.reduce((result, attr) => {
+    const name = convertAttr(attr.name);
     result[name] = name === 'style' ? styleParser(attr.value) : attr.value;
     return result;
-  }, {key: key});
+  }, {key});
 
   if (node.childNodes.length === 0) {
     return React.createElement(node.tagName, attr);
   }
 
-  var children = node.childNodes.map(renderNode);
+  const children = node.childNodes.map(renderNode);
   return React.createElement(node.tagName, attr, children);
 };
 
-var renderHTML = function (html) {
-  var htmlAST = htmlParser.parseFragment(html);
+const renderHTML = function (html) {
+  const htmlAST = htmlParser.parseFragment(html);
 
   if (htmlAST.childNodes.length === 0) {
     return null;
   }
 
-  var result = htmlAST.childNodes.map(renderNode);
+  const result = htmlAST.childNodes.map(renderNode);
 
   return result.length === 1 ? result[0] : result;
 };
