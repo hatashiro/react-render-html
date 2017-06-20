@@ -21,19 +21,19 @@
   },
   "homepage": "https://github.com/noraesae/react-render-html#readme",
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^0.19.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "xo": "^0.16.0"
+    "xo": "^0.18.2"
   },
   "xo": {
     "space": true
   },
   "dependencies": {
-    "camelcase": "^3.0.0",
-    "parse5": "^2.0.2",
-    "react-attr-converter": "0.1.1",
-    "uppercamelcase": "^1.1.0"
+    "camelcase": "^4.1.0",
+    "parse5": "^3.0.2",
+    "react-attr-converter": "^0.2.0",
+    "uppercamelcase": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^15.1.0"
