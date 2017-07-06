@@ -5,7 +5,7 @@ const React = require('react');
 const convertAttr = require('react-attr-converter');
 const styleParser = require('./lib/style-parser');
 
-const renderNode = function (node, key) {
+const renderNode = (node, key) => {
   if (node.nodeName === '#text') {
     return node.value;
   }
@@ -28,7 +28,7 @@ const renderNode = function (node, key) {
   return React.createElement(node.tagName, attr, children);
 };
 
-const renderHTML = function (html) {
+const renderHTML = html => {
   const htmlAST = htmlParser.parseFragment(html);
 
   if (htmlAST.childNodes.length === 0) {
