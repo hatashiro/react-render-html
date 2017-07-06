@@ -14,7 +14,7 @@
     "react",
     "html"
   ],
-  "author": "Hyunje Alex Jun <me@noraesae.net> (http://noraesae.net/)",
+  "author": "Hyunje Jun <me@noraesae.net>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/noraesae/react-render-html/issues"
