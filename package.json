@@ -27,7 +27,8 @@
     "xo": "^0.18.2"
   },
   "xo": {
-    "space": true
+    "space": true,
+    "esnext": false
   },
   "dependencies": {
     "camelcase": "^4.1.0",
