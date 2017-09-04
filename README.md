@@ -1,6 +1,6 @@
 # react-render-html [![travis-ci](https://travis-ci.org/noraesae/react-render-html.svg)](https://travis-ci.org/noraesae/react-render-html)
 
-No more dangerouslySetInnerHTML, render HTML as React element.
+Render HTML as React element, possibly replacing dangerouslySetInnerHTML
 
 ## How it works
 
@@ -40,6 +40,19 @@ an array of React elements.
 renderHTML('<li>hello</li><li>world</li>');
 // => [React Element <li>hello</li>, React Element <li>world</li>]
 ```
+
+## Pros and cons
+
+### Pros
+
+- Can make use of React's reconciliation for plain HTML too
+- Fully compatible with JSX
+
+### Cons
+
+- It uses [parse5](https://github.com/inikulin/parse5) to parse HTML, which can
+  result in large bundle size
+- Can result in slower rendering speed, mainly for parsing
 
 ## Install
 

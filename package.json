@@ -1,7 +1,7 @@
 {
   "name": "react-render-html",
   "version": "0.5.0",
-  "description": "No more dangerouslySetInnerHTML, render HTML as React element.",
+  "description": "Render HTML as React element, possibly replacing dangerouslySetInnerHTML",
   "main": "index.js",
   "scripts": {
     "test": "xo && ava"
