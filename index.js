@@ -24,6 +24,11 @@ function renderNode(node, key) {
     return React.createElement(node.tagName, attr);
   }
 
+  if (node.nodeName === 'script') {
+    attr.dangerouslySetInnerHTML = {__html: node.childNodes[0].value};
+    return React.createElement('script', attr);
+  }
+
   var children = node.childNodes.map(renderNode);
   return React.createElement(node.tagName, attr, children);
 }
