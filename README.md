@@ -1,4 +1,4 @@
-# react-render-html [![travis-ci](https://travis-ci.org/noraesae/react-render-html.svg)](https://travis-ci.org/noraesae/react-render-html)
+# react-render-html [![travis-ci](https://travis-ci.org/utatti/react-render-html.svg)](https://travis-ci.org/utatti/react-render-html)
 
 Render HTML as React element, possibly replacing dangerouslySetInnerHTML
 
@@ -72,7 +72,7 @@ import renderHTML from 'react-render-html';
 
 ## A bug!
 
-When a bug is found, please report them in [Issues](https://github.com/noraesae/react-render-html/issues).
+When a bug is found, please report them in [Issues](https://github.com/utatti/react-render-html/issues).
 
 Also, any form of contribution(especially a PR) will absolutely be welcomed :beers:
 

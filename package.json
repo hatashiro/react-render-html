@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noraesae/react-render-html.git"
+    "url": "git+https://github.com/utatti/react-render-html.git"
   },
   "keywords": [
     "react",
@@ -17,9 +17,9 @@
   "author": "Hyunje Jun <me@noraesae.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noraesae/react-render-html/issues"
+    "url": "https://github.com/utatti/react-render-html/issues"
   },
-  "homepage": "https://github.com/noraesae/react-render-html#readme",
+  "homepage": "https://github.com/utatti/react-render-html#readme",
   "devDependencies": {
     "ava": "^0.20.0",
     "react": "^15.1.0",
