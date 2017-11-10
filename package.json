@@ -22,8 +22,8 @@
   "homepage": "https://github.com/utatti/react-render-html#readme",
   "devDependencies": {
     "ava": "^0.20.0",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
     "xo": "^0.18.2"
   },
   "xo": {
@@ -35,6 +35,6 @@
     "react-attr-converter": "^0.3.1"
   },
   "peerDependencies": {
-    "react": "^15.1.0"
+    "react": "^16.1.0"
   }
 }
