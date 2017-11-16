@@ -12,7 +12,6 @@ In order to get around this, we parse the HTML sring into a _node_ (or collectio
 
 It renders a provided HTML string into a React element.
 
-If you have a
 ```js
 import renderHTML from 'react-render-html';
 
