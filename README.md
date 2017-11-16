@@ -2,6 +2,12 @@
 
 Render HTML as React element, possibly replacing dangerouslySetInnerHTML
 
+## Motivation
+If you have a string containing HTML, and you attempt to render it inside of a JSX element, React will _escape_ the HTML; the user will end up seeing the HTML source code (rather than the desired UI elements).  This is to prevent XSS attacks, but it can be frustrating when you _want_ to render such a string to the page.
+
+In order to get around this, we parse the HTML sring into a _node_ (or collection of nodes), which React won't bother escaping.  React can't tell the difference between this node-that-came-from-a-string, and any other vanilla node, so it decides it doesn't need to do any escaping.  We're essentially tricking React into thinking it hasn't been passed something that it needs to escape.
+
+
 ## How it works
 
 It renders a provided HTML string into a React element.
