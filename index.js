@@ -18,7 +18,7 @@ function renderNode(node, key) {
     var name = convertAttr(attr.name);
     result[name] = name === 'style' ? styleParser(attr.value) : attr.value;
     return result;
-  }, {key: key});
+  }, {key: key + '-' + Math.floor(Math.random()*16777215).toString(16)});
 
   if (node.childNodes.length === 0) {
     return React.createElement(node.tagName, attr);
