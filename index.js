@@ -34,6 +34,9 @@ function renderNode(node, key) {
 }
 
 function renderHTML(html) {
+  if (html === null) {
+    html = ''; // extra check, adding this code not to fail at parseFragment if value is null
+  }
   var htmlAST = htmlParser.parseFragment(html);
 
   if (htmlAST.childNodes.length === 0) {
