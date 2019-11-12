@@ -2,6 +2,15 @@
 
 Render HTML as React element, possibly replacing dangerouslySetInnerHTML
 
+## Deprecation
+
+This library is no more maintained. Please use other libraries instead.
+
+* [htmr](https://github.com/pveyes/htmr)
+* [html-to-react](https://github.com/aknuds1/html-to-react)
+* [react-html-parser](https://github.com/wrakky/react-html-parser)
+* [html-react-parser](https://github.com/remarkablemark/html-react-parser)
+
 ## How it works
 
 It renders a provided HTML string into a React element.
