@@ -42,7 +42,7 @@ function renderHTML(html) {
 
   var result = htmlAST.childNodes.map(renderNode);
 
-  return result.length === 1 ? result[0] : result;
+  return result;
 }
 
 module.exports = renderHTML;
