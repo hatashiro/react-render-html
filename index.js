@@ -34,6 +34,9 @@ function renderNode(node, key) {
 }
 
 function renderHTML(html) {
+  if (html === null) {
+    html = '';
+  }
   var htmlAST = htmlParser.parseFragment(html);
 
   if (htmlAST.childNodes.length === 0) {
